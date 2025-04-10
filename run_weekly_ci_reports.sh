@@ -2,7 +2,7 @@
 
 REPO_SCRIPT=ci_stats.rb
 MYDIR="$(dirname $(realpath $0))"
-REPO_SCRIPT_PATH="$MYDIR/oss-stats/$REPO_SCRIPT"
+REPO_SCRIPT_PATH="$MYDIR/oss-stats/src/$REPO_SCRIPT"
 
 # infra-client
 chef_repos=(
