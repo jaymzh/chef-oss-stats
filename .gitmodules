@@ -1,0 +1,3 @@
+[submodule "oss-stats"]
+	path = oss-stats
+	url = git@github.com:jaymzh/oss-stats.git
