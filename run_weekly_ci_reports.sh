@@ -110,7 +110,9 @@ If you see a deprecated repo or don't see a current repo, please update the
 repo lists in
 [chef-oss-practices/projects](https://github.com/chef/chef-oss-practices/tree/main/projects)
 and
-[chef/community_pr_review_checklist](https://github.com/chef/chef/blob/main/docs/dev/how_to/community_pr_review_checklist.md) and then file an Issue (or PR) in [jaymzh/chef-oss-stats](https://github.com/jaymzh/chef-oss-stats).
+[chef/community_pr_review_checklist](https://github.com/chef/chef/blob/main/docs/dev/how_to/community_pr_review_checklist.md)
+and then file an Issue (or PR) in
+[jaymzh/chef-oss-stats](https://github.com/jaymzh/chef-oss-stats).
 
 EOF
 
