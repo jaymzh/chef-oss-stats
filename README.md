@@ -1,5 +1,8 @@
 # Chef's OSS Stats
 
+[![Lint](https://github.com/jaymzh/chef-oss-stats/actions/workflows/lint.yml/badge.svg)](https://github.com/jaymzh/chef-oss-stats/actions/workflows/lint.yml)
+[![DCO Check](https://github.com/jaymzh/chef-oss-stats/actions/workflows/dco.yml/badge.svg)](https://github.com/jaymzh/chef-oss-stats/actions/workflows/dco.yml)
+
 This repo aims to track stats that affect how Chef Users ("the community") can
 interact with Progress' development teams and repositories.
 
