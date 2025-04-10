@@ -3,6 +3,47 @@
 REPO_SCRIPT=ci_stats.rb
 MYDIR="$(dirname $(realpath $0))"
 REPO_SCRIPT_PATH="$MYDIR/oss-stats/src/$REPO_SCRIPT"
+OUTPUT=''
+
+ourhelp() {
+    cat <<EOF
+This is a dumb wrapper around ${REPO_SCRIPT}!
+
+It has no options itself. It will call $REPO_SCRIPT for all repos
+it knows about. It will pass any options to this script to all calls
+to $REPO_SCRIPT.
+EOF
+}
+
+output() {
+    if [ -z "$OUTPUT" ]; then
+        echo -e "$*"
+    else
+        echo -e "$*" >> "$OUTPUT"
+    fi
+}
+
+while getopts 'ho:' opt; do
+    case "$opt" in
+        h)
+            ourhelp
+            exit
+            ;;
+        o)
+            OUTPUT="$OPTARG"
+            ;;
+        ?)
+            ourhelp
+            exit 1
+    esac
+done
+
+# remove those args so we can pass the rest to the script
+shift $((OPTIND - 1))
+
+if [ -n "$OUTPUT" ]; then
+    rm "$OUTPUT"
+fi
 
 # infra-client
 chef_repos=(
@@ -92,19 +133,8 @@ inspec_repos=(
     inspec-gcp
 )
 
-if [[ "$*" =~ '--help' ]] || [[ "$*" =~ 'h' ]]; then
-    cat <<EOF
-This is a dumb wrapper around ${REPO_SCRIPT}!
-
-It has no options itself. It will call $REPO_SCRIPT for all repos
-it knows about. It will pass any options to this script to all calls
-to $REPO_SCRIPT.
-EOF
-    exit
-fi
-
-cat <<EOF
-# Weekly Chef Repo Statuses
+date=$(date '+%Y-%m-%d')
+header="# Weekly Chef Repo Statuses - $date
 
 If you see a deprecated repo or don't see a current repo, please update the
 repo lists in
@@ -112,25 +142,28 @@ repo lists in
 and
 [chef/community_pr_review_checklist](https://github.com/chef/chef/blob/main/docs/dev/how_to/community_pr_review_checklist.md)
 and then file an Issue (or PR) in
-[jaymzh/chef-oss-stats](https://github.com/jaymzh/chef-oss-stats).
+[jaymzh/chef-oss-stats](https://github.com/jaymzh/chef-oss-stats)."
 
-EOF
+output "$header\n"
 
+echo "Running on chef repos..."
 for repo in "${chef_repos[@]}"; do
     args=("--repo=$repo")
     if [ $repo = 'chef' ] || [ $repo = 'ohai' ]; then
         args+=("--branches=main,chef18")
     fi
-    $REPO_SCRIPT_PATH "${args[@]}" --repo $repo "${@}"
-    echo
+    res=$($REPO_SCRIPT_PATH "${args[@]}" --repo $repo "${@}")
+    output "$res\n"
 done
 
+echo "Running on habitat repos..."
 for repo in "${habitat_repos[@]}"; do
-    $REPO_SCRIPT_PATH --org habitat-sh --repo $repo "${@}"
-    echo
+    res=$($REPO_SCRIPT_PATH --org habitat-sh --repo $repo "${@}")
+    output "$res\n"
 done
 
+echo "Running on inspec repos..."
 for repo in "${inspec_repos[@]}"; do
-    $REPO_SCRIPT_PATH --org inspec --repo $repo "${@}"
-    echo
+    res=$($REPO_SCRIPT_PATH --org inspec --repo $repo "${@}")
+    output "$res\n"
 done
