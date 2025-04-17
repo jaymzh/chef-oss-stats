@@ -41,7 +41,7 @@ done
 # remove those args so we can pass the rest to the script
 shift $((OPTIND - 1))
 
-if [ -n "$OUTPUT" ]; then
+if [ -n "$OUTPUT" ] && [ -e "$OUTPUT" ]; then
     rm "$OUTPUT"
 fi
 
