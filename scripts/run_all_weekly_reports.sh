@@ -29,4 +29,4 @@ echo "Running Promises Report"
 
 output="ci_reports/${date}.md"
 echo "Running CI Report"
-./run_weekly_ci_reports.sh -o "$output" -- --days 7
+./scripts/run_weekly_ci_reports.sh -o "$output" -- --days 7
