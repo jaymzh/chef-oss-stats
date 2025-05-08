@@ -18,11 +18,14 @@ fi
 date=$(date '+%Y-%m-%d')
 
 echo "Running Pipeline Visibility Report"
-./oss-stats/src/pipeline_visibility_stats.rb \
+../oss-stats/src/pipeline_visibility_stats.rb \
     -o "pipeline_visibility_reports/${date}.md"
 
 echo "Running Meeting Report"
-./oss-stats/src/meeting_stats.rb -m generate
+../oss-stats/src/meeting_stats.rb -m generate
+
+echo "Running Promises Report"
+../oss-stats/src/meeting_stats.rb -o "promises/${date}.md"
 
 output="ci_reports/${date}.md"
 echo "Running CI Report"

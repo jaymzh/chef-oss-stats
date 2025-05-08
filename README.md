@@ -7,14 +7,15 @@ This repo aims to track stats that affect how Chef Users ("the community") can
 interact with Progress' development teams and repositories.
 
 It leverages [oss-stats](https://github.com/jaymzh/oss-stats) to track those
-stats.
+stats. It assumes oss-stats and this repo are checked out next to each other
+on the filesystem.
 
 ## tl;dr
 
 * See **Issue, PR, and CI stats** in [ci_reports](ci_reports)
 * See **weekly meeting stats** in [Slack Status Tracking](team_slack_reports.md)
 * See **pipeline visiblity stats** in [pipeline_visibility_reports](pipeline_visibility_reports)
-* See **manual stats** in [Misc stats](manual_stats/misc.md)
+* See **promises** in [promises][promises]
 
 ## Issue, PR, and CI Status
 
@@ -43,9 +44,9 @@ then generated into [Slack Status Tracking](team_slack_reports.md)
 
 ### Updating the report
 
-To record a new meeting, run `./oss-stats/src/meeting_stats.rb -m record`.
+To record a new meeting, run `../oss-stats/src/meeting_stats.rb -m record`.
 
-To update the report with the new data, run `./oss-stats/src/meeting_stats.rb
+To update the report with the new data, run `../oss-stats/src/meeting_stats.rb
 -m generate`.
 
 ## Pipeline visibility stats
@@ -61,9 +62,11 @@ This metric tracks the number of those, and we put the results in
 
 ### Updating the report
 
-Simply run `./oss-stats/src/pipeline_visibility_stats.rb`
+Simply run `../oss-stats/src/pipeline_visibility_stats.rb`
 
-## Manual or semi-manual stats
+## Promises
 
-There are a variety of miscelanious manual statistics which are gathered
-manually and recorded in [Misc stats](manual_stats/misc.md).
+Promises are tracked in [Promises](promises).
+
+Add a new promise with `promises.rb -m add-promise`, or run with no arguments
+to get a report.
