@@ -25,7 +25,7 @@ echo "Running Meeting Report"
 ../oss-stats/src/meeting_stats.rb -m generate
 
 echo "Running Promises Report"
-../oss-stats/src/meeting_stats.rb -o "promises/${date}.md"
+../oss-stats/src/promises.rb -o "promises_reports/${date}.md"
 
 output="ci_reports/${date}.md"
 echo "Running CI Report"
