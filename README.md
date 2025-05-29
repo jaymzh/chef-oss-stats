@@ -15,7 +15,7 @@ on the filesystem.
 * See **Issue, PR, and CI stats** in [ci_reports](ci_reports)
 * See **weekly meeting stats** in [Slack Status Tracking](team_slack_reports.md)
 * See **pipeline visiblity stats** in [pipeline_visibility_reports](pipeline_visibility_reports)
-* See **promises** in [promises][promises]
+* See **promises** in [promises](promises)
 
 ## Usage
 
