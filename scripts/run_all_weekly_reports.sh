@@ -18,7 +18,13 @@ fi
 date=$(date '+%Y-%m-%d')
 
 echo "Running Pipeline Visibility Report"
+#../oss-stats/src/pipeline_visibility_stats.rb \
+#    --skip adhoc --skip private --skip release \
+#    --buildkite-org chef-oss --github-org chef \
+#    -o "pipeline_visibility_reports/${date}.md"
 ../oss-stats/src/pipeline_visibility_stats.rb \
+    --skip adhoc --skip private --skip release \
+    --provider expeditor --github-org chef \
     -o "pipeline_visibility_reports/${date}.md"
 
 echo "Running Meeting Report"
@@ -27,6 +33,5 @@ echo "Running Meeting Report"
 echo "Running Promises Report"
 ../oss-stats/src/promises.rb -o "promises_reports/${date}.md"
 
-output="ci_reports/${date}.md"
 echo "Running CI Report"
-./scripts/run_weekly_ci_reports.sh -o "$output" -- --days 7
+./scripts/run_weekly_ci_reports.sh -o "ci_reports/${date}.md" -- --days 7
