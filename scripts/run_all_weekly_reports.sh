@@ -22,16 +22,16 @@ echo "Running Pipeline Visibility Report"
 #    --skip adhoc --skip private --skip release \
 #    --buildkite-org chef-oss --github-org chef \
 #    -o "pipeline_visibility_reports/${date}.md"
-../oss-stats/src/pipeline_visibility_stats.rb \
+../oss-stats/bin/pipeline_visibility_stats.rb \
     --skip adhoc --skip private --skip release \
     --provider expeditor --github-org chef \
     -o "pipeline_visibility_reports/${date}.md"
 
 echo "Running Meeting Report"
-../oss-stats/src/meeting_stats.rb -m generate
+../oss-stats/bin/meeting_stats.rb -m generate
 
 echo "Running Promises Report"
-../oss-stats/src/promises.rb -o "promises_reports/${date}.md"
+../oss-stats/bin/promises.rb -o "promises_reports/${date}.md"
 
 echo "Running CI Report"
-./scripts/run_weekly_ci_reports.sh -o "ci_reports/${date}.md" -- --days 7
+./scripts/run_weekly_ci_reports.sh -o "ci_reports/${date}.md"
