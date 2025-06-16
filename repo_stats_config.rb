@@ -1,6 +1,12 @@
 buildkite_org 'chef-oss'
 default_days 7
 include_list false
+top_n_stale_pr 1
+top_n_oldest_pr 1
+top_n_time_to_close_pr 1
+top_n_most_broken_ci_days 3
+top_n_most_broken_ci_jobs 3
+mode %w{pr ci}
 organizations({
   'chef' => {
     'repositories' => {
