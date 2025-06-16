@@ -21,8 +21,18 @@ date = options[:date] || Date.today.to_s
 # rubocop:disable Lint/UselessAssignment
 promises = File.read("promises_reports/#{date}.md").lines[2..].join
 pipelines = File.read("pipeline_visibility_reports/#{date}.md").lines[2..].join
-s = Mixlib::ShellOut.new('../oss-stats/src/meeting_stats.rb -m summary')
+s = Mixlib::ShellOut.new('../oss-stats/bin/meeting_stats.rb -m summary')
 meetings = s.run_command.stdout
+repos = ''
+File.read("repo_reports/#{date}.md").each_line do |line|
+  next unless line.start_with?('*_[')
+  m = line.match(/\*\_(\[.*\]\(https.*\)) Stats/)
+  if m
+    repos << "* #{m[1]}\n"
+  else
+    puts "this line should have matched: #{line}"
+  end
+end
 # rubocop:enable Lint/UselessAssignment
 
 template_file = File.expand_path('../templates/slack_report.erb', __dir__)

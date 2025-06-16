@@ -12,7 +12,7 @@ on the filesystem.
 
 ## tl;dr
 
-* See **Issue, PR, and CI stats** in [ci_reports](ci_reports)
+* See **Issue, PR, and CI stats** in [repo_reports](repo_reports)
 * See **weekly meeting stats** in [Slack Status Tracking](team_slack_reports.md)
 * See **pipeline visiblity stats** in [pipeline_visibility_reports](pipeline_visibility_reports)
 * See **promises** in [promises](promises)
@@ -24,7 +24,7 @@ README](https://github.com/jaymzh/oss-stats/blob/main/README.md).
 
 ## Extra scripts in this repo
 
-* [run_weekly_ci_reports.sh](run_weekly_ci_reports.sh) loops over all relevant
+* [run_weekly_repo_reports.sh](run_weekly_repo_reports.sh) loops over all relevant
   repos and runs ci_stats.rb on them.
 * [run_all_weekly_reports.sh](run_all_weekly_reports.sh) runs all report
   generators including `run_weekly_ci_reports`
