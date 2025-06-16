@@ -24,12 +24,12 @@ README](https://github.com/jaymzh/oss-stats/blob/main/README.md).
 
 ## Extra scripts in this repo
 
-* [run_weekly_repo_reports.sh](run_weekly_repo_reports.sh) loops over all relevant
-  repos and runs ci_stats.rb on them.
-* [run_all_weekly_reports.sh](run_all_weekly_reports.sh) runs all report
-  generators including `run_weekly_ci_reports`
-* [assemble_slack_report.rb](assemble_slack_report.rb) generates most of
-  the slack report.
+* [run_weekly_repo_reports.sh](scripts/run_weekly_repo_reports.sh) loops over
+  all relevant repos and runs ci_stats.rb on them.
+* [run_all_weekly_reports.sh](scripts/run_all_weekly_reports.sh) runs all
+  report generators including `run_weekly_ci_reports`
+* [assemble_slack_report.rb](scripts/assemble_slack_report.rb) generates most
+  of the slack report.
 
 ## Weekly work
 
@@ -40,7 +40,7 @@ Each week...
 sj feature weekly
 
 # Update information about last meeting with:
-../oss-stats/src/meeting_stats.rb
+../oss-stats/bin/meeting_stats.rb
 
 # Generate all reports for the repo with:
 ./scripts/run_all_weekly_reports.sh
