@@ -31,7 +31,7 @@ echo "Running Meeting Report"
 ../oss-stats/bin/meeting_stats.rb -m generate
 
 echo "Running Promises Report"
-../oss-stats/bin/promises.rb -o "promises_reports/${date}.md"
+../oss-stats/bin/promise_stats.rb -o "promise_reports/${date}.md"
 
 echo "Running CI Report"
 ./scripts/run_weekly_ci_reports.sh -o "ci_reports/${date}.md"

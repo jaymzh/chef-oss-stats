@@ -19,7 +19,7 @@ end.parse!
 
 date = options[:date] || Date.today.to_s
 # rubocop:disable Lint/UselessAssignment
-promises = File.read("promises_reports/#{date}.md").lines[2..].join
+promises = File.read("promise_reports/#{date}.md").lines[2..].join
 pipelines = File.read("pipeline_visibility_reports/#{date}.md").lines[2..].join
 s = Mixlib::ShellOut.new('../oss-stats/bin/meeting_stats.rb -m summary')
 meetings = s.run_command.stdout
