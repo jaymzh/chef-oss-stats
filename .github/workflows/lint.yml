@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  ruby:
+  lint:
     strategy:
       fail-fast: false
     runs-on: ubuntu-latest
@@ -16,24 +16,18 @@ jobs:
         sudo apt-get -y install imagemagick libmagickwand-dev
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        path: 'chef-oss-stats'
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        repository: jaymzh/oss-stats
-        path: 'oss-stats'
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.4
+        ruby-version: '3.4'
     - name: Install ruby dependencies
       run: bundle install
-      working-directory: ./chef-oss-stats
     - name: Run chefstyle
-      run: ../oss-stats/scripts/run_cookstyle.sh
-      working-directory: ./chef-oss-stats
+      run: |-
+        ./scripts/oss_stats_script.sh run_cookstyle.sh
     - name: Run markdownlint
-      # Only run MDL on our MDLs , not the auto-generated reports
-      run: ../oss-stats/scripts/run_markdownlint.sh $(find . -type f -name \*.md | grep -v _reports)
-      working-directory: ./chef-oss-stats
+      # Only run MDL on our MDs , not the auto-generated reports
+      run: |-
+        ./scripts/oss_stats_script.sh run_markdownlint.sh $(find . -type f -name \*.md | grep -v _reports)

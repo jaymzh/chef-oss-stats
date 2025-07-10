@@ -3,5 +3,5 @@ db_file DEFAULT_DB_FILE = File.expand_path(
   __dir__,
 )
 header <<~EOF
-    # Promises Report #{Date.today.to_s}
+    # Promises Report #{Date.today}
 EOF

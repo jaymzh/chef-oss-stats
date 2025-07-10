@@ -15,6 +15,7 @@ teams [
 ]
 header <<~EOF
     # Chef Slack Meeting tracking
+
     This document tracks status updates from Progress teams. While other
     teams such as Sous Chefs, Cinc, and Meta sometimes post updates, this
     document tracks internal teams only

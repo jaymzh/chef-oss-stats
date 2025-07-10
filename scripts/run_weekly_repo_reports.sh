@@ -1,8 +1,7 @@
 #!/bin/bash
 
 REPO_SCRIPT=repo_stats
-MYDIR="$(dirname $(realpath $0))"
-REPO_SCRIPT_PATH="$MYDIR/../../oss-stats/bin/$REPO_SCRIPT"
+REPO_SCRIPT_PATH="./bin/$REPO_SCRIPT"
 OUTPUT=''
 
 ourhelp() {
