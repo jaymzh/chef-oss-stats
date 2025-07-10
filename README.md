@@ -40,7 +40,7 @@ Each week...
 sj feature weekly
 
 # Update information about last meeting with:
-../oss-stats/bin/meeting_stats.rb
+../oss-stats/bin/meeting_stats
 
 # Generate all reports for the repo with:
 ./scripts/run_all_weekly_reports.sh
