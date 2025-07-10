@@ -1,4 +1,4 @@
 on_push: [lint]
 lint:
   - ../oss-stats/scripts/run_cookstyle.sh -a
-  - ../oss-stats/scripts/run_markdownlint.sh .
+  - ../oss-stats/scripts/run_markdownlint.sh *.md
