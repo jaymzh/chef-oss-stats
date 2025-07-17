@@ -32,7 +32,7 @@ echo "Running Meeting Report"
 ./bin/meeting_stats -m generate
 
 echo "Running Promises Report"
-./bin/promise_stats -o "promise_reports/${date}.md"
+./bin/promise_stats status -o "promise_reports/${date}.md"
 
 echo "Running CI Report"
 ./scripts/run_weekly_repo_reports.sh -o "repo_reports/${date}.md" "${@}"

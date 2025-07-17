@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/jaymzh/oss-stats.git
-  revision: 0d7571610d96aa3c40291fbb4a0e94fdca85db62
+  revision: 2fd83e66421ac427330784f04311a76055b900a6
   specs:
-    oss-stats (0.0.1)
+    oss-stats (0.0.2)
       base64
       deep_merge
       faraday-retry
@@ -45,7 +45,7 @@ GEM
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
-    gruff (0.27.0)
+    gruff (0.27.1)
       bigdecimal (>= 3.0)
       histogram
       rmagick (>= 5.5)
@@ -88,7 +88,7 @@ GEM
     rainbow (3.1.1)
     regexp_parser (2.10.0)
     rexml (3.4.1)
-    rmagick (6.1.1)
+    rmagick (6.1.2)
       observer (~> 0.1)
       pkg-config (~> 1.4)
     rspec (3.13.1)
