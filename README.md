@@ -31,25 +31,102 @@ README](https://github.com/jaymzh/oss-stats/blob/main/README.md).
 * [assemble_slack_report.rb](scripts/assemble_slack_report.rb) generates most
   of the slack report.
 
+## Setting up this repo
+
+1. Clone this repo
+1. [optional] If you want to use `sugarjar`, I recommend keeping a checkout of
+   [oss-stats](https://github.com/jaymzh/oss-stats) at the same level.
+   The sugarjar config assumes this is the case for linting.
+1. Install the deps and create the relevant binstubs:
+
+    ```shell
+    bundle install
+    bundle binstubs oss-stats
+    ```
+
 ## Weekly work
 
-Each week...
+For simplicity the docs for the weekly work are split into a version
+for those using sugarjar, and for those not using it.
 
-```shell
-# Create a new branch
-sj feature weekly
+Regardless of your tooling you will need your own fork of the repo to push
+branches so you can make pull requests.
 
-# Update information about last meeting with:
-./bin/meeting_stats
+### Sugarjar version
 
-# Generate all reports for the repo with:
-./scripts/run_all_weekly_reports.sh
-git add *_reports/*
+1. Create a new branch
 
-# Create a PR
-git commit -as
-sj spush && sj spr
+    ```shell
+    sj feature weekly
+    ```
 
-# Generate slack team meet
-./scripts/assemble_slack_report.rb
-```
+1. Update the information about last week's meeting. By default,
+   assumes a date of the previous Thursday, so if you're running
+   this Thursday morning for the previous week you'll need to pass
+   in `--date YYYY-MM-DD`
+
+    ```shell
+    ./bin/meeting_stats
+    ```
+
+1. Generate all reports for the repo with:
+
+    ```shell
+    ./scripts/run_all_weekly_reports.sh
+    ```
+
+1. Add the new reports to git and make a PR:
+
+    ```shell
+    git add *_reports/*
+    git commit -as
+    sj spush && sj spr
+    ```
+
+1. Generate the report for the slack team meeting
+
+    ```shell
+    ./scripts/assemble_slack_report.rb
+    ```
+
+### non-Sugarjar version
+
+What follows assumes your `origin` remote in git is your fork and `upstream` is
+this repo.
+
+1. Create a new branch
+
+    ```shell
+    # or, alternatively, with git
+    git checkout -b weekly origin/main
+    ```
+
+1. Update the information about last week's meeting. By default,
+   assumes a date of the previous Thursday, so if you're running
+   this Thursday morning for the previous week you'll need to pass
+   in `--date YYYY-MM-DD`
+
+    ```shell
+    ./bin/meeting_stats
+    ```
+
+1. Generate all reports for the repo with:
+
+    ```shell
+    ./scripts/run_all_weekly_reports.sh
+    ```
+
+1. Add the new reports to git and make a PR:
+
+    ```shell
+    git add *_reports/*
+    git commit -as
+    git push origin weekly
+    gh pr create -f # or, if you prefer, create the PR in the web UI
+    ```
+
+1. Generate slack team meet
+
+    ```shell
+    ./scripts/assemble_slack_report.rb
+    ```
