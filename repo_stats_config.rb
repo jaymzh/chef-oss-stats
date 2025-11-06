@@ -41,6 +41,7 @@ organizations({
                     'chef-zero' => {},
                     'ffi-yajl' => {},
                     'fauxhai' => {},
+                    'chefspec' => {},
                   },
                 },
                 'habitat-sh' => {
