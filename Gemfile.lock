@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jaymzh/oss-stats.git
-  revision: 900521b3ae1f9a2893f150acfc7b4f42761f08fa
+  revision: 8cf20a2835f2f33c0ace1919dec5e69bb2d01d18
   specs:
     oss-stats (0.0.2)
       base64
@@ -10,6 +10,7 @@ GIT
       mixlib-config
       mixlib-log
       octokit
+      reline
       sqlite3
 
 GEM
@@ -50,9 +51,10 @@ GEM
       histogram
       rmagick (>= 5.5)
     histogram (0.2.4.1)
+    io-console (0.8.2)
     json (2.18.0)
-    kramdown (2.5.1)
-      rexml (>= 3.3.9)
+    kramdown (2.5.2)
+      rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     language_server-protocol (3.17.0.5)
@@ -69,7 +71,7 @@ GEM
       tomlrb
     mixlib-log (3.2.3)
       ffi (>= 1.15.5)
-    mixlib-shellout (3.3.9)
+    mixlib-shellout (3.4.10)
       chef-utils
     net-http (0.9.1)
       uri (>= 0.11.1)
@@ -87,6 +89,8 @@ GEM
     racc (1.8.1)
     rainbow (3.1.1)
     regexp_parser (2.11.3)
+    reline (0.6.3)
+      io-console (~> 0.5)
     rexml (3.4.4)
     rmagick (6.1.5)
       observer (~> 0.1)
