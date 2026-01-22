@@ -10,7 +10,7 @@ teams [
   'Chef Workstation',
   'Automate',
   'Habitat',
-  'Courier',
+  'Chef 360/Courier',
   'Inspec',
 ]
 header <<~EOF
