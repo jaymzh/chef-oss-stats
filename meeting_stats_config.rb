@@ -4,6 +4,8 @@ db_file DEFAULT_DB_FILE = File.expand_path(
 )
 output File.expand_path('./team_slack_reports.md', __dir__)
 image_dir File.expand_path('./images', __dir__)
+# NOTE: This list is only used for database initialization. New teams
+# can be added when running 'record' mode.
 teams [
   'Chef Client',
   'Chef Server',
