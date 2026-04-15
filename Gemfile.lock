@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jaymzh/oss-stats.git
-  revision: 1433a23a3ad8c92c22c91c61770858ca89085b43
+  revision: 4ce89e53c12fdbb778406e366ce4d8b0aa69f41d
   specs:
     oss-stats (0.0.2)
       base64
