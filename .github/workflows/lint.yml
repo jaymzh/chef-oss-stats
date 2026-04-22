@@ -31,3 +31,5 @@ jobs:
       # Only run MDL on our MDs , not the auto-generated reports
       run: |-
         ./scripts/oss_stats_script.sh run_markdownlint.sh $(find . -type f -name \*.md | grep -v _reports)
+    - name: Run shellcheck
+      run: ./scripts/oss_stats_script.sh run_shellcheck.sh
