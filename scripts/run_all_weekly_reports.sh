@@ -36,3 +36,6 @@ echo "Running Promises Report"
 
 echo "Running CI Report"
 ./scripts/run_weekly_repo_reports.sh -o "repo_reports/${date}.md" "${@}"
+
+echo "Running external contributors Report"
+./scripts/non-progress-stats.rb "${@}" > external_contributors_reports/${date}.md

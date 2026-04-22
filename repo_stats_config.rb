@@ -16,6 +16,7 @@ organizations({
                     'ohai' => {
                       'branches' => %w{main chef-18},
                     },
+                    'knife' => {},
                     'cheffish' => {},
                     'cookstyle' => {},
                     'cookstylist' => {},

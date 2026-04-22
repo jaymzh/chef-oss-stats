@@ -1,17 +1,17 @@
 :chart_with_upwards_trend: *_CHEF COMMUNITY COMMITMENT ACCOUNTABILITY UPDATE_* :chart_with_upwards_trend:
 
-:arrow_forward: _*Pending Community Promises*_ :chart_with_downwards_trend:
+:arrow_forward: _*Pending Community Promises*_ :arrow_backward:
 
 <%= promises %>
 
-:arrow_forward: _*Pipeline Visibility*_ :chart_with_upwards_trend:
+:arrow_forward: _*Pipeline Visibility*_ :arrow_backward:
 
 <%= pipelines %>
 
 * Current list: [<%= date %>](https://github.com/jaymzh/chef-oss-stats/blob/main/pipeline_visibility_reports/<%= date %>.md)
 * Previous weeks: [pipeline_visibility_reports](https://github.com/jaymzh/chef-oss-stats/tree/main/pipeline_visibility_reports)
 
-:arrow_forward: _*Repo Status*_ :chart_with_upwards_trend:
+:arrow_forward: _*Repo Status*_ :arrow_backward:
 
 The following repos are on the top-troubled repos (see threshold criteria
 [here](https://github.com/jaymzh/chef-oss-stats/blob/main/repo_stats_config.rb#L4).
@@ -23,12 +23,18 @@ See the details for those repose here:
 * Current list: [<%= date %>](https://github.com/jaymzh/chef-oss-stats/blob/main/repo_reports/<%= date %>.md)
 * Previous weeks: [ci_repots](https://github.com/jaymzh/chef-oss-stats/tree/main/repo_reports)
 
-:arrow_forward: _*Slack report metrics*_ :chart_with_upwards_trend:
+:arrow_forward: _*Slack report metrics*_ :arrow_backward:
 
 <%= meetings %>
 
 Previous weeks and graphs of this over time can be found [here](https://github.com/jaymzh/chef-oss-stats/blob/main/team_slack_reports.md).
 
-:arrow_forward: _*Help Improve These Stats*_
+:arrow_forward: _*External contributors report*_ :arrow_backward:
+
+The following stats include all repos with external contributions.
+
+<%= external_contributions %>
+
+:arrow_forward: _*Help Improve These Stats*_ :arrow_backward:
 
 These stats are primarily created via [automation](https://github.com/jaymzh/oss-stats/). Come help improve them! Also, all Progress/Chef-specific data and previous reports [are also publicly available](https://github.com/jaymzh/chef-oss-stats/).

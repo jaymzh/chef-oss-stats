@@ -13,9 +13,13 @@ on the filesystem.
 ## tl;dr
 
 * See **Issue, PR, and CI stats** in [repo_reports](repo_reports)
-* See **weekly meeting stats** in [Slack Status Tracking](team_slack_reports.md)
-* See **pipeline visiblity stats** in [pipeline_visibility_reports](pipeline_visibility_reports)
+* See **weekly meeting stats** in [Slack Status
+  Tracking](team_slack_reports.md)
+* See **pipeline visiblity stats** in
+  [pipeline_visibility_reports](pipeline_visibility_reports)
 * See **promise stats** in [promise_reports](promise_reports)
+* See **external contributors stats** in
+  [external_contributors_reports](external_contributors_reports)
 
 ## Usage
 
@@ -30,6 +34,8 @@ README](https://github.com/jaymzh/oss-stats/blob/main/README.md).
   report generators including `run_weekly_ci_reports`
 * [assemble_slack_report.rb](scripts/assemble_slack_report.rb) generates most
   of the slack report.
+* [non-progress-stats.rb](scripts/non-progress-stats.rb) generates a report
+  of external contributions.
 
 ## Setting up this repo
 

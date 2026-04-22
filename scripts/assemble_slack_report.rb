@@ -35,6 +35,7 @@ File.read("repo_reports/#{date}.md").each_line do |line|
     puts "this line should have matched: #{line}"
   end
 end
+external_contributions = File.read("external_contributors_reports/#{date}.md")
 # rubocop:enable Lint/UselessAssignment
 
 template_file = File.expand_path('../templates/slack_report.erb', __dir__)
