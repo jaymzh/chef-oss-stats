@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jaymzh/oss-stats.git
-  revision: 4ea1bbf4d25f30f7a55d082665c5cf343dca2565
+  revision: e3c4b41bf77e248497b0cb273a60404d661007e4
   specs:
     oss-stats (0.0.2)
       base64
@@ -32,7 +32,7 @@ GEM
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
-    faraday-net_http (3.4.2)
+    faraday-net_http (3.4.3)
       net-http (~> 0.5)
     faraday-retry (2.4.0)
       faraday (~> 2.0)
@@ -46,7 +46,7 @@ GEM
     ffi (1.17.4-x86_64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
-    gruff (0.31.0)
+    gruff (0.32.0)
       bigdecimal (>= 3.0)
       histogram
       rmagick (>= 5.5)
