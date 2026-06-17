@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jaymzh/oss-stats.git
-  revision: 987a319b9bfeb4364f86de69b35b111d60eb85ff
+  revision: 483d44932e6809387c82b1dd571f425108a25e89
   specs:
     oss-stats (0.0.2)
       base64
@@ -28,7 +28,7 @@ GEM
       rubocop (= 1.84.2)
     deep_merge (1.2.2)
     diff-lcs (1.6.2)
-    faraday (2.14.2)
+    faraday (2.14.3)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
@@ -52,7 +52,7 @@ GEM
       rmagick (>= 5.5)
     histogram (0.2.4.1)
     io-console (0.8.2)
-    json (2.19.8)
+    json (2.19.9)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
@@ -92,7 +92,7 @@ GEM
     reline (0.6.3)
       io-console (~> 0.5)
     rexml (3.4.4)
-    rmagick (7.0.3)
+    rmagick (7.0.4)
       observer (~> 0.1)
       pkg-config (~> 1.4)
     rspec (3.13.2)
@@ -126,16 +126,16 @@ GEM
     sawyer (0.9.3)
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
-    sqlite3 (2.9.4-aarch64-linux-gnu)
-    sqlite3 (2.9.4-aarch64-linux-musl)
-    sqlite3 (2.9.4-arm-linux-gnu)
-    sqlite3 (2.9.4-arm-linux-musl)
-    sqlite3 (2.9.4-arm64-darwin)
-    sqlite3 (2.9.4-x86-linux-gnu)
-    sqlite3 (2.9.4-x86-linux-musl)
-    sqlite3 (2.9.4-x86_64-darwin)
-    sqlite3 (2.9.4-x86_64-linux-gnu)
-    sqlite3 (2.9.4-x86_64-linux-musl)
+    sqlite3 (2.9.5-aarch64-linux-gnu)
+    sqlite3 (2.9.5-aarch64-linux-musl)
+    sqlite3 (2.9.5-arm-linux-gnu)
+    sqlite3 (2.9.5-arm-linux-musl)
+    sqlite3 (2.9.5-arm64-darwin)
+    sqlite3 (2.9.5-x86-linux-gnu)
+    sqlite3 (2.9.5-x86-linux-musl)
+    sqlite3 (2.9.5-x86_64-darwin)
+    sqlite3 (2.9.5-x86_64-linux-gnu)
+    sqlite3 (2.9.5-x86_64-linux-musl)
     tomlrb (2.0.4)
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
