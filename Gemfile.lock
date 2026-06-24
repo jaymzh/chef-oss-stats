@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jaymzh/oss-stats.git
-  revision: 483d44932e6809387c82b1dd571f425108a25e89
+  revision: 5a21a540cdf4f77df4a28bba38b84c1bfa7bca80
   specs:
     oss-stats (0.0.2)
       base64
@@ -52,7 +52,7 @@ GEM
       rmagick (>= 5.5)
     histogram (0.2.4.1)
     io-console (0.8.2)
-    json (2.19.9)
+    json (2.20.0)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
