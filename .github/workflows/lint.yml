@@ -24,7 +24,7 @@ jobs:
         ruby-version: '3.4'
     - name: Install ruby dependencies
       run: bundle install
-    - name: Run chefstyle
+    - name: Run cookstyle
       run: |-
         ./scripts/oss_stats_script.sh run_cookstyle.sh
     - name: Run markdownlint

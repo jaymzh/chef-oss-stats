@@ -143,8 +143,7 @@ def compute_stats(owner, repo, _days, cutoff, log)
 end
 
 def summarize(_label, logins)
-  real = logins.reject { |l| BOT_ACCOUNTS.include?(l.downcase) }
-  bots = logins.select { |l| BOT_ACCOUNTS.include?(l.downcase) }
+  bots, real = logins.partition { |l| BOT_ACCOUNTS.include?(l.downcase) }
   non_progress = real.reject { |l| PROGRESS_ACCOUNTS.include?(l.downcase) }
 
   pct = real.empty? ? 0 : (non_progress.size * 100 / real.size)
