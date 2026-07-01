@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jaymzh/oss-stats.git
-  revision: 5a21a540cdf4f77df4a28bba38b84c1bfa7bca80
+  revision: 87d106f2b875da4e3ae405dac97da92e93b54edc
   specs:
     oss-stats (0.0.2)
       base64
@@ -92,7 +92,7 @@ GEM
     reline (0.6.3)
       io-console (~> 0.5)
     rexml (3.4.4)
-    rmagick (7.0.4)
+    rmagick (7.0.5)
       observer (~> 0.1)
       pkg-config (~> 1.4)
     rspec (3.13.2)
