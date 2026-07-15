@@ -60,7 +60,7 @@ jobs:
           report_date="$(date +%F)"
           bundle exec ./scripts/assemble_slack_report.rb --date "$report_date" --output "slack_reports/$report_date.md"
 
-      - name: Commit and open or update weekly PR
+      - name: Commit and open update weekly PR
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
