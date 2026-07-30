@@ -49,16 +49,13 @@ jobs:
 
       - name: Generate weekly reports
         env:
+          BUILDKITE_TOKEN: ${{ secrets.BK_TOKEN }}
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
+          test -n "$BUILDKITE_TOKEN"
           test -n "$GH_TOKEN"
           ./scripts/run_all_weekly_reports.sh --yes
-
-      - name: Assemble Slack report
-        run: |
-          report_date="$(date +%F)"
-          bundle exec ./scripts/assemble_slack_report.rb --date "$report_date" --output "slack_reports/$report_date.md"
 
       - name: Commit and open update weekly PR
         env:
@@ -67,7 +64,7 @@ jobs:
           report_date="$(date +%F)"
           branch="automation/weekly-report-$report_date"
           git switch -c "$branch"
-          git add -- *_reports/*.md slack_reports/*.md team_slack_reports.md
+          git add -- *_reports/*.md team_slack_reports.md
           if git diff --cached --quiet; then
             echo "No weekly report changes to commit."
             exit 0
@@ -76,6 +73,9 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit --signoff -m "Update weekly Chef OSS reports for $report_date"
           git push --force-with-lease origin "HEAD:$branch"
-          if ! gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number' | grep -q .; then
+          existing_pr="$(gh pr list --head "$branch" --base main --state open --json url --jq '.[0].url')"
+          if [[ -n "$existing_pr" ]]; then
+            echo "Weekly report PR already exists: $existing_pr"
+          else
             gh pr create --base main --head "$branch" --title "Weekly Chef OSS reports for $report_date" --body "Automated weekly report generation for $report_date."
           fi

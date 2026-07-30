@@ -2,15 +2,10 @@
 
 require 'erb'
 require 'date'
-require 'fileutils'
 require 'optparse'
 require 'mixlib/shellout'
 
 INTRO_TEXT = "Here's this week's Chef OSS community report.".freeze
-
-def markdown_links_to_mrkdwn(text)
-  text.gsub(/\[([^\]]+)\]\((https?:[^)]+)\)/, '<\\2|\\1>')
-end
 
 def present_text(text)
   stripped = text.to_s.strip
@@ -33,12 +28,6 @@ OptionParser.new do |opts|
     'today',
   ) do |d|
     options[:date] = d
-  end
-  opts.on(
-    '--output PATH',
-    'Write the assembled Slack report to PATH.',
-  ) do |path|
-    options[:output] = path
   end
 end.parse!
 
@@ -72,11 +61,4 @@ external_contributions = present_text(
 template_file = File.expand_path('../templates/slack_report.erb', __dir__)
 template = File.read(template_file)
 output = ERB.new(template, trim_mode: '%<>').result(binding)
-output = normalize_spacing(markdown_links_to_mrkdwn(output))
-
-if options[:output]
-  FileUtils.mkdir_p(File.dirname(options[:output]))
-  File.write(options[:output], output)
-else
-  puts output
-end
+puts normalize_spacing(output)
