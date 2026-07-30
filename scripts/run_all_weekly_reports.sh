@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 err() {
     echo "ERROR: $*"
 }
@@ -9,8 +11,14 @@ die() {
     exit 1
 }
 
-echo -n "Have you already updated meeting for last week? [Y/n] "
-read -r ans
+if [[ "${1:-}" == "--yes" ]]; then
+    ans=Y
+    shift
+else
+    echo -n "Have you already updated meeting for last week? [Y/n] "
+    read -r ans
+fi
+
 if ! [[ "$ans" =~ [Yy] ]]; then
     die "Please do that first" 
 fi
