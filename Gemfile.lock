@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jaymzh/oss-stats.git
-  revision: 87d106f2b875da4e3ae405dac97da92e93b54edc
+  revision: cb61fbe43dae3e470b87229115520b93d6497089
   specs:
     oss-stats (0.0.2)
       base64
@@ -52,7 +52,7 @@ GEM
       rmagick (>= 5.5)
     histogram (0.2.4.1)
     io-console (0.8.2)
-    json (2.20.0)
+    json (2.21.2)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
@@ -92,7 +92,7 @@ GEM
     reline (0.6.3)
       io-console (~> 0.5)
     rexml (3.4.4)
-    rmagick (7.0.5)
+    rmagick (7.1.0)
       observer (~> 0.1)
       pkg-config (~> 1.4)
     rspec (3.13.2)
