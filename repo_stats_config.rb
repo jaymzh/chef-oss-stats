@@ -1,4 +1,4 @@
-buildkite_org 'chef-oss'
+buildkite_org 'chef-oss' if ENV['BUILDKITE_API_TOKEN']
 default_days 7
 include_list false
 top_n_stale_pr 1

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 REPO_SCRIPT=repo_stats
 REPO_SCRIPT_PATH="./bin/$REPO_SCRIPT"
 OUTPUT=''
@@ -56,5 +58,20 @@ and then file an Issue (or PR) in
 [jaymzh/chef-oss-stats](https://github.com/jaymzh/chef-oss-stats)."
 
 output "$header\n"
-res=$($REPO_SCRIPT_PATH "${@}")
+if ! res=$($REPO_SCRIPT_PATH "${@}" 2>&1); then
+    echo "$res" >&2
+    if [ -n "$OUTPUT" ]; then
+        rm -f "$OUTPUT"
+    fi
+    exit 1
+fi
+
+if [ -z "$res" ]; then
+    echo "ERROR: repo_stats produced no report output" >&2
+    if [ -n "$OUTPUT" ]; then
+        rm -f "$OUTPUT"
+    fi
+    exit 1
+fi
+
 output "$res\n"
