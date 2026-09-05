@@ -2,6 +2,8 @@ db_file DEFAULT_DB_FILE = File.expand_path(
   './data/meeting_data.sqlite3',
   __dir__,
 )
+meeting_dow 'thursday'
+meeting_frequency 'weekly'
 output File.expand_path('./team_slack_reports.md', __dir__)
 image_dir File.expand_path('./images', __dir__)
 # NOTE: This list is only used for database initialization. New teams
